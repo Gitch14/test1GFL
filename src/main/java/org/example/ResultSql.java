@@ -17,7 +17,7 @@ public class ResultSql {
     }
 
 
-    public void find() {
+    public void findAll() {
 
         String sql = "Select * FROM test";
         try  {

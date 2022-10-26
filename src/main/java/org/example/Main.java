@@ -7,9 +7,9 @@ public class Main {
         ResultSql resultSql = new ResultSql();
         resultSql.Connect();
        // resultSql.update();
-        resultSql.find();
+        resultSql.findAll();
         resultSql.edit();
-        resultSql.find();
+        resultSql.findAll();
 
     }
 }
