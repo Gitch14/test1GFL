@@ -8,10 +8,6 @@ public class ResultSql {
     private Connection connection;
     Scanner scanner = new Scanner(System.in);
 
-
-
-
-
     public void Connect() {
         connection = ManagerDb.getInstance().getConnection();
     }
@@ -74,30 +70,5 @@ public class ResultSql {
 
     }
 
-    /*public void find() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Plz give result : \n");
-        Double resultScan = scanner.nextDouble();
-        String sql = "Select * FROM test where result = ?";
-        Statement statement = null;
-        PreparedStatement setValue = null;
-        try {
-            setValue = connection.prepareStatement(sql);
-            statement = connection.createStatement();
 
-
-            setValue.setDouble(1,resultScan);
-            ResultSet resultSet = statement.executeQuery(sql);
-            while (resultSet.next()){
-                int id = resultSet.getInt("id");
-                String expr = resultSet.getString("expr");
-                String result = resultSet.getString("result");
-                System.out.println(id + " | " + expr + " | " + result);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-     */
 }
