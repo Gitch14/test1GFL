@@ -21,15 +21,13 @@ public class Menu {
             +"2 - findLess result\n"
             +"3 - findBigger result\n";
 
-    private Connection connection;
-
 
     public void menuList(ResultSqImp resultSqImp, FindImp findImp, CounterImp counterImp) {
         findImp.connect();
         resultSqImp.connect();
         Scanner scanner = new Scanner(System.in);
         int num = 0;
-        scanner.nextLine();
+
         while (num == 0) {
             System.out.println(generalMenu);
             int n1 = scanner.nextInt();
