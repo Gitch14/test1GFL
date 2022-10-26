@@ -1,16 +1,17 @@
-package org.example.MenuFunction;
+package org.example.MenuFunction.Imp;
 
 import net.objecthunter.exp4j.ExpressionBuilder;
 import org.example.ManagerDb;
+import org.example.MenuFunction.ResultSqI;
 
 import java.sql.*;
 import java.util.Scanner;
 
-public class ResultSql {
+public class ResultSqImp implements ResultSqI {
     private Connection connection;
     Scanner scanner = new Scanner(System.in);
 
-    public void Connect() {
+    public void connect() {
         connection = ManagerDb.getInstance().getConnection();
     }
 
@@ -35,6 +36,7 @@ public class ResultSql {
 
     //добавление примера и результата в базу данных
     public void update() {
+        System.out.println("Write your expression: ");
         String exprScan = scanner.nextLine();
         double resultScan = new ExpressionBuilder(exprScan).build().evaluate();
         String query = "INSERT INTO test(expr, result) VALUES (?,?)";
@@ -53,10 +55,10 @@ public class ResultSql {
     //редактирование примера и результата в базе данных
     public void edit() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Plz give id : \n");
+        System.out.println("Write expressions id : \n");
         int id = scanner.nextInt();
         scanner.nextLine();
-        System.out.println("Plz give new expression : \n");
+        System.out.println("Write new expression: ");
         String exprScan = scanner.nextLine();
         double resultScan = new ExpressionBuilder(exprScan).build().evaluate();
         String query = "UPDATE test SET expr = ?, result = ? where id = ?";

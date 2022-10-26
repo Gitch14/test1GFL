@@ -1,8 +1,8 @@
 package org.example;
 
-import org.example.MenuFunction.Counter;
-import org.example.MenuFunction.Find;
-import org.example.MenuFunction.ResultSql;
+import org.example.MenuFunction.Imp.CounterImp;
+import org.example.MenuFunction.Imp.FindImp;
+import org.example.MenuFunction.Imp.ResultSqImp;
 
 import java.sql.Connection;
 import java.util.Scanner;
@@ -24,8 +24,9 @@ public class Menu {
     private Connection connection;
 
 
-    public void menuList(ResultSql resultSql, Find find, Counter counter) {
-        find.Connect();resultSql.Connect();
+    public void menuList(ResultSqImp resultSqImp, FindImp findImp, CounterImp counterImp) {
+        findImp.connect();
+        resultSqImp.connect();
         Scanner scanner = new Scanner(System.in);
         int num = 0;
         scanner.nextLine();
@@ -34,29 +35,29 @@ public class Menu {
             int n1 = scanner.nextInt();
             switch (n1) {
                 case 1:
-                resultSql.findAll();
+                resultSqImp.findAll();
                 break;
                 case 2:
-                    resultSql.update();
+                    resultSqImp.update();
                     break;
                 case 3:
-                    resultSql.edit();
+                    resultSqImp.edit();
                     break;
                 case 4:
-                    counter.count();
+                    counterImp.count();
                     break;
                 case 5:
                     System.out.println(filterMenu);
                     int n2 = scanner.nextInt();
                     switch (n2){
                         case 1:
-                            find.findEquals();
+                            findImp.findEquals();
                             break;
                         case 2:
-                            find.findLess();
+                            findImp.findLess();
                             break;
                         case 3:
-                            find.findBigger();
+                            findImp.findBigger();
                     }
                     break;
             }
