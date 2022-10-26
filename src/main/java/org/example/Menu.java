@@ -38,7 +38,7 @@ public class Menu {
                     resultSql.edit();
                     break;
                 case 4:
-
+                    System.out.println(filterMenu);
                     int n2 = scanner.nextInt();
                     switch (n2){
                         case 1:
