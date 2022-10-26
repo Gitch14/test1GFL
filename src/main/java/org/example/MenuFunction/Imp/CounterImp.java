@@ -9,14 +9,13 @@ import java.util.regex.Pattern;
 public class CounterImp implements Counter {
     Scanner scanner = new Scanner(System.in);
     public void count() {
-        int count = 0, sum = 0;
+        int count = 0;
         System.out.println("Write your expression: ");
         String exprScan = scanner.nextLine();
         Pattern p = Pattern.compile("(\\d+)");
         Matcher m = p.matcher(exprScan);
 
         while (m.find()) {
-            sum += Integer.parseInt(m.group());
             count++;
         }
 
