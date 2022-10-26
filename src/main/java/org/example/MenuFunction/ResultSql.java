@@ -1,6 +1,8 @@
-package org.example;
+package org.example.MenuFunction;
 
 import net.objecthunter.exp4j.ExpressionBuilder;
+import org.example.ManagerDb;
+
 import java.sql.*;
 import java.util.Scanner;
 
@@ -12,7 +14,7 @@ public class ResultSql {
         connection = ManagerDb.getInstance().getConnection();
     }
 
-
+    //поискпримера и результата в базу данных
     public void findAll() {
 
         String sql = "Select * FROM test";
@@ -31,6 +33,7 @@ public class ResultSql {
         }
     }
 
+    //добавление примера и результата в базу данных
     public void update() {
         String exprScan = scanner.nextLine();
         double resultScan = new ExpressionBuilder(exprScan).build().evaluate();
@@ -47,6 +50,7 @@ public class ResultSql {
 
     }
 
+    //редактирование примера и результата в базе данных
     public void edit() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Plz give id : \n");

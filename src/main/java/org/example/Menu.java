@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.MenuFunction.Counter;
+import org.example.MenuFunction.Find;
+import org.example.MenuFunction.ResultSql;
+
 import java.sql.Connection;
 import java.util.Scanner;
 
@@ -8,7 +12,8 @@ public class Menu {
             +"1 - findAll expression\n"
             +"2 - new expression\n"
             +"3 - edit expression\n"
-            +"4 - filter\n";
+            +"4 - counter\n"
+            +"5 - filter\n";
 
 
     private final static String filterMenu = "Input num to choice menu : \n"
@@ -19,7 +24,7 @@ public class Menu {
     private Connection connection;
 
 
-    public void menuList(ResultSql resultSql, Find find) {
+    public void menuList(ResultSql resultSql, Find find, Counter counter) {
         find.Connect();resultSql.Connect();
         Scanner scanner = new Scanner(System.in);
         int num = 0;
@@ -38,6 +43,9 @@ public class Menu {
                     resultSql.edit();
                     break;
                 case 4:
+                    counter.count();
+                    break;
+                case 5:
                     System.out.println(filterMenu);
                     int n2 = scanner.nextInt();
                     switch (n2){

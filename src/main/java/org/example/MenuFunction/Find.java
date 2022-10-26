@@ -1,4 +1,6 @@
-package org.example;
+package org.example.MenuFunction;
+
+import org.example.ManagerDb;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,7 +17,7 @@ public class Find {
         connection = ManagerDb.getInstance().getConnection();
     }
 
-
+    //поиск примера и результата в базу данных(ищет по результату если равны)
     public void findEquals() {
         System.out.println("Plz give result : \n");
         double resultScan = scanner.nextDouble();
@@ -39,6 +41,7 @@ public class Find {
         }
     }
 
+    //поиск примера и результата в базу данных(ищет по результату если меньше указаного числа)
     public void findLess() {
         System.out.println("Plz give result : \n");
         double resultScan = scanner.nextDouble();
@@ -62,6 +65,7 @@ public class Find {
         }
     }
 
+    //поиск примера и результата в базу данных(ищет по результату если больше указаного числа)
     public void findBigger() {
         System.out.println("Plz give result : \n");
         double resultScan = scanner.nextDouble();

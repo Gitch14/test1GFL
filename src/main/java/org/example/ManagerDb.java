@@ -15,7 +15,9 @@ public class ManagerDb {
 
     private static ManagerDb instance;
 
+    // Патерн проектирования Singleton
     public ManagerDb() {
+        // относительный путь к проперти где сохранены настройки подключение к базе данных
         try (BufferedReader reader = Files.newBufferedReader(Path.of("D:\\test\\src\\main\\resources\\settings.properties"))) {
             Properties properties = new Properties();
             properties.load(reader);
