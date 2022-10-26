@@ -17,7 +17,6 @@ public class Find {
 
 
     public void findEquals() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Plz give result : \n");
         double resultScan = scanner.nextDouble();
         String sql = "Select * FROM test where result = ?";
@@ -41,7 +40,6 @@ public class Find {
     }
 
     public void findLess() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Plz give result : \n");
         double resultScan = scanner.nextDouble();
         String sql = "Select * FROM test where result < ?";
@@ -65,7 +63,6 @@ public class Find {
     }
 
     public void findBigger() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Plz give result : \n");
         double resultScan = scanner.nextDouble();
         String sql = "Select * FROM test where result > ?";
