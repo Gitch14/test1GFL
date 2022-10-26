@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class ResultSql {
     private Connection connection;
     Scanner scanner = new Scanner(System.in);
-    String expr = scanner.nextLine();
-    double result = new ExpressionBuilder(expr).build().evaluate();
+    String exprScan = scanner.nextLine();
+    double resultScan = new ExpressionBuilder(exprScan).build().evaluate();
 
 
 
@@ -40,8 +40,31 @@ public class ResultSql {
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(query);
-            statement.setString(1, expr);
-            statement.setDouble(2, result);
+            statement.setString(1, exprScan);
+            statement.setDouble(2, resultScan);
+            statement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void edit() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Plz give id : \n");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Plz give new expression : \n");
+        String exprScan = scanner.nextLine();
+        double resultScan = new ExpressionBuilder(exprScan).build().evaluate();
+        String query = "UPDATE test SET expr = ?, result = ? where id = ?";
+
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(query);
+            statement.setString(1, exprScan);
+            statement.setDouble(2, resultScan);
+            statement.setInt(3,id);
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
