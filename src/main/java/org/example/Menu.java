@@ -4,7 +4,6 @@ import org.example.MenuFunction.Imp.CounterImp;
 import org.example.MenuFunction.Imp.FindImp;
 import org.example.MenuFunction.Imp.ResultSqImp;
 
-import java.sql.Connection;
 import java.util.Scanner;
 
 public class Menu {
