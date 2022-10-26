@@ -4,12 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ResultSql resultSql = new ResultSql();
-        resultSql.Connect();
-       // resultSql.update();
-        resultSql.findAll();
-        resultSql.edit();
-        resultSql.findAll();
+        Menu menu = new Menu();
+        menu.menuList(new ResultSql());
 
     }
 }
